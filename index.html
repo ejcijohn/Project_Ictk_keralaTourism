@@ -70,27 +70,43 @@
                   <header>Login Form</header>
                   <form action="#" >
                     <div class="field email">
+                     
                       <div class="input-area" >
-                        <input type="text" placeholder="Email Address" >
+                        <input type="text" placeholder="Email Address" id="emailInputField" >
                         <i class="icon fas fa-envelope"></i>
                         <i class="error error-icon fas fa-exclamation-circle"></i>
                       </div>
                       <div class="error error-txt">Email can't be blank</div>
+                     <script> 
+                     var eInput=document.getElementById("emailInputField");
+                     eInput.onkeyup = ()=>{checkEmail();} // set the event listener
+                     //console.log(emailInputField.nodeValue);
+                     </script>
                     </div>
                     <div class="field password">
                       <div class="input-area">
-                        <input type="password" placeholder="Password" >
+                        <input type="password" placeholder="Password" id="passwordInputField" >
                         <i class="icon fas fa-lock"></i>
                         <i class="error error-icon fas fa-exclamation-circle"></i>
                       </div>
                       <div class="error error-txt">Password can't be blank</div>
+                      <script> 
+                        var pInput=document.getElementById("passwordInputField");
+                        pInput.onkeyup = ()=>{checkPass();} // set the event listener
+                        //console.log(emailInputField.nodeValue);
+                        </script>
                     </div>
                     <div class="pass-txt"><a href="#">Forgot password?</a></div>
-                    <input type="submit" value="Login">
+                    
+                    <input type="submit" value="Login" id="loginbutton">
+                     <script>document.getElementById("loginbutton").disabled = true;
+                     document.getElementById('loginbutton').style.backgroundColor="#EBEBE4";
+                     //document.getElementById('loginbutton').style.textDecoration = "none";
+                     </script>
                   </form>
                   <div class="sign-txt">Not yet member? <a href="signup.html">Signup now</a></div>
                 </div>
-                <script src="login.js"></script>
+              <script src="login.js"></script>
               </div>
             </div>
           </div>
@@ -212,3 +228,5 @@
   </nav>
 </body>
 </html>
+
+
