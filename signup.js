@@ -12,6 +12,7 @@ pInput1 = pField1.querySelector("input");
 var checkboxInputvalue;
 var password1=pInput.value;
 var password2=pInput1.value;
+var checkname; var checkmail; var checkmobile; var checkpass; var checkpassmatch ; var checkboxInputvalue ;
 
 function checkName(){ //checkName function
 
