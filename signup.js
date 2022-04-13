@@ -153,4 +153,3 @@ form.onsubmit = (e)=>{
   e.preventDefault(); //preventing from form submitting
    window.location.href = form.getAttribute("action"); //redirecting user to the specified url which is inside action attribute of form tag
   }
-}
