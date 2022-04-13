@@ -4,14 +4,19 @@ nInput = nField.querySelector("input"),
 eField = form.querySelector(".email"),
 eInput = eField.querySelector("input"),
 mField = form.querySelector(".mobile"),
-mInput = eField.querySelector("input"),
+mInput = mField.querySelector("input"),
 pField = form.querySelector(".password"),
 pInput = pField.querySelector("input");
+pField1 = form.querySelector(".password1"),
+pInput1 = pField1.querySelector("input");
+var checkboxInputvalue;
+var password1=pInput.value;
+var password2=pInput1.value;
 
 function checkName(){ //checkName function
 
   nInputvalue = nField.querySelector("input").value;
- if(nInputvalue.length < 4){ //if pattern not matched then add error and remove valid class
+ if(nInputvalue.length < 3){ //if pattern not matched then add error and remove valid class
    nField.classList.add("error");
    nField.classList.remove("valid");
    //document.getElementById("loginbutton").disabled = true;
@@ -73,6 +78,71 @@ function checkMobile(){ //checkEmail function
      // document.getElementById('loginbutton').style.backgroundColor="#0000CD";
    // }
   }
+}
+
+function checkPassword(){ //checkEmail function
+  let pattern = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;   //pattern for validate mobile
+  //pInputvalue = pField.querySelector("input").value;
+ if(!pInput.value.match(pattern)){ //if pattern not matched then add error and remove valid class
+   pField.classList.add("error");
+   pField.classList.remove("valid");
+   //document.getElementById("loginbutton").disabled = true;
+  // document.getElementById('loginbutton').style.backgroundColor="#EBEBE4";
+   //checkpass=0;
+   let errorTxt = pField.querySelector(".error-txt");
+   //if email value is not empty then show please enter valid email else show Email can't be blank
+   (pInput.value != "") ? errorTxt.innerText = " Password contains atleast 8 characters [must include a Special character,Uppercase,lower case & digit]" : errorTxt.innerText = "Password can't be blank";
+    }else{ //if pattern matched then remove error and add valid class
+   pField.classList.remove("error");
+   pField.classList.add("valid");
+   password1=pInput.value;
+   //checkpass=1; 
+   //if (checkmail == 1 && checkpass == 1 ){
+     //document.getElementById("loginbutton").disabled = false;
+     //document.getElementById('loginbutton').style.backgroundColor="#0000CD";
+  // }
+ }
+}
+
+
+function checkPasswordmatch(){ //checkEmail function
+  //let pattern = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;   //pattern for validate mobile
+  password2 = pInput1.value;
+ if((password1 != password2) ){ //if pattern not matched then add error and remove valid class
+   pField1.classList.add("error");
+   pField1.classList.remove("valid");
+   //document.getElementById("loginbutton").disabled = true;
+  // document.getElementById('loginbutton').style.backgroundColor="#EBEBE4";
+   //checkpass=0;
+   let errorTxt = pField1.querySelector(".error-txt");
+   //if email value is not empty then show please enter valid email else show Email can't be blank
+   (pInput1.value != "") ? errorTxt.innerText = " Password does not match" : errorTxt.innerText = "Password can't be blank";
+    }else{ //if pattern matched then remove error and add valid class
+   pField1.classList.remove("error");
+   pField1.classList.add("valid");
+   //password1=pInput.value;
+   //checkpass=1; 
+   //if (checkmail == 1 && checkpass == 1 ){
+     //document.getElementById("loginbutton").disabled = false;
+     //document.getElementById('loginbutton').style.backgroundColor="#0000CD";
+  // }
+ }
+}
+
+function checkboxvalue(){ //checkEmail function
+  var checkvalue=document.getElementById("checkboxInputField");
+  console.log(checkvalue.checked);
+  //console.log(cInput);
+  if(checkvalue.checked == true){
+    console.log("entry true");
+    checkboxInputvalue=1;
+    console.log(checkboxInputvalue);
+  }else{
+    console.log("entry false")
+    checkboxInputvalue=0;
+    console.log(checkboxInputvalue);
+  }
+  
 }
 
 

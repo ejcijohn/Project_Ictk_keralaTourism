@@ -114,29 +114,44 @@
             </div>
 
 
-            <div class="field password1">
+            <div class="field password">
               <div class="input-area">
-                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Password" id="passwordInputField">
                 <i class="icon fas fa-lock"></i>
                 <i class="error error-icon fas fa-exclamation-circle"></i>
               </div>
               <div class="error error-txt">Password can't be blank</div>
+              <script> 
+                var pInput=document.getElementById("passwordInputField");
+                pInput.onkeyup = ()=>{checkPassword();} // set the event listener
+                //console.log(emailInputField.nodeValue);
+                </script>
             </div>
 
-            <div class="field password2">
+            <div class="field password1">
               <div class="input-area">
-                <input type="password" placeholder="Retype password">
+                <input type="password" placeholder="Retype password" id="passwordInputField1" >
                 <i class="icon fas fa-lock"></i>
                 <i class="error error-icon fas fa-exclamation-circle"></i>
               </div>
-              <div class="error error-txt">Password missmatch</div>
+              <div class="error error-txt">Password does not match</div>
+              <script> 
+                var pInput1=document.getElementById("passwordInputField1");
+                pInput1.onkeyup = ()=>{checkPasswordmatch();} // set the event listener
+                //console.log(emailInputField.nodeValue);
+                </script>
             </div>
             <div class="field checkbox">
               <div class="input-area">
-                <input type="checkbox" >I read and agree to terms and conditions
-                <i class="error error-icon fas fa-exclamation-circle"></i>
+                <input type="checkbox"  value="true"   id="checkboxInputField">I read and agree to terms and conditions
+                <!-- <i class="error error-icon fas fa-exclamation-circle"></i> -->
               </div>
-              <div class="error error-txt">Password missmatch</div>
+              <!-- <div class="error error-txt">Password missmatch</div> -->
+              <script> 
+                var cInput=document.getElementById("checkboxInputField");
+                cInput.onclick = ()=>{checkboxvalue();} // set the event listener
+                //console.log(emailInputField.nodeValue);
+                </script>
             </div>
             
 
