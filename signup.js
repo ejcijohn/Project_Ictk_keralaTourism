@@ -103,8 +103,6 @@ function checkPassword(){ //checkEmail function
  }
  }
 }
-
-
 function checkPasswordmatch(){ //checkEmail function
   //let pattern = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;   //pattern for validate mobile
   password2 = pInput1.value;
@@ -131,7 +129,6 @@ function checkPasswordmatch(){ //checkEmail function
 
 function checkboxvalue(){ //checkEmail function
   var checkvalue=document.getElementById("checkboxInputField");
-  //console.log(cInput);
   if(checkvalue.checked == true){
     checkboxInputvalue=1;
     if ( checkname==1 && checkmail == 1 && checkmobile == 1 && checkpass == 1 && checkpassmatch ==1 && checkboxInputvalue ==1   ){
@@ -145,10 +142,6 @@ function checkboxvalue(){ //checkEmail function
   }
   
 }
-
-
-
-
 form.onsubmit = (e)=>{
   e.preventDefault(); //preventing from form submitting
    window.location.href = form.getAttribute("action"); //redirecting user to the specified url which is inside action attribute of form tag
