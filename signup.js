@@ -1,8 +1,82 @@
 const form = document.querySelector("form");
+nField = form.querySelector(".name"),
+nInput = nField.querySelector("input"),
 eField = form.querySelector(".email"),
 eInput = eField.querySelector("input"),
+mField = form.querySelector(".mobile"),
+mInput = eField.querySelector("input"),
 pField = form.querySelector(".password"),
 pInput = pField.querySelector("input");
+
+function checkName(){ //checkName function
+
+  nInputvalue = nField.querySelector("input").value;
+ if(nInputvalue.length < 4){ //if pattern not matched then add error and remove valid class
+   nField.classList.add("error");
+   nField.classList.remove("valid");
+   //document.getElementById("loginbutton").disabled = true;
+   //document.getElementById('loginbutton').style.backgroundColor="#EBEBE4";
+   //checkpass=0;
+   let errorTxt = nField.querySelector(".error-txt");
+   //if email value is not empty then show please enter valid email else show Email can't be blank
+   (nInput.value != "") ? errorTxt.innerText = "Name contains atleast 3 characters" : errorTxt.innerText = "Name can't be blank";
+    }else{ //if pattern matched then remove error and add valid class
+   nField.classList.remove("error");
+   nField.classList.add("valid");
+   //checkpass=1; 
+  // if (checkmail == 1 && checkpass == 1 ){
+    // document.getElementById("loginbutton").disabled = false;
+    //document.getElementById('loginbutton').style.backgroundColor="#0000CD";
+  // }
+ }
+}
+
+function checkEmail(){ //checkEmail function
+  let pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;   //pattern for validate email
+  if(!eInput.value.match(pattern)){ //if pattern not matched then add error and remove valid class
+    eField.classList.add("error");
+    eField.classList.remove("valid");
+   // document.getElementById("loginbutton").disabled = true;
+   // document.getElementById('loginbutton').style.backgroundColor="#EBEBE4";
+   // checkmail=0;
+    let errorTxt = eField.querySelector(".error-txt");
+    //if email value is not empty then show please enter valid email else show Email can't be blank
+    (eInput.value != "") ? errorTxt.innerText = "Enter a valid email address" : errorTxt.innerText = "Email can't be blank";
+  }else{ //if pattern matched then remove error and add valid class
+    eField.classList.remove("error");
+    eField.classList.add("valid");
+   // checkmail=1;
+    //if (checkmail == 1 && checkpass == 1 ){
+     // document.getElementById("loginbutton").disabled = false;
+     // document.getElementById('loginbutton').style.backgroundColor="#0000CD";
+   // }
+  }
+}
+
+function checkMobile(){ //checkEmail function
+  let pattern = /^(?:(?:\+|0{0,2})91(\s*|[\-])?|[0]?)?([6789]\d{2}([ -]?)\d{3}([ -]?)\d{4})$/;   //pattern for validate mobile
+  if(!mInput.value.match(pattern)){ //if pattern not matched then add error and remove valid class
+    mField.classList.add("error");
+    mField.classList.remove("valid");
+   // document.getElementById("loginbutton").disabled = true;
+   // document.getElementById('loginbutton').style.backgroundColor="#EBEBE4";
+   // checkmail=0;
+    let errorTxt = mField.querySelector(".error-txt");
+    //if email value is not empty then show please enter valid email else show Email can't be blank
+    (mInput.value != "") ? errorTxt.innerText = "Enter a valid Indian mobile number" : errorTxt.innerText = "Mobile number can't be blank";
+  }else{ //if pattern matched then remove error and add valid class
+    mField.classList.remove("error");
+    mField.classList.add("valid");
+   // checkmail=1;
+    //if (checkmail == 1 && checkpass == 1 ){
+     // document.getElementById("loginbutton").disabled = false;
+     // document.getElementById('loginbutton').style.backgroundColor="#0000CD";
+   // }
+  }
+}
+
+
+
 
 form.onsubmit = (e)=>{
   e.preventDefault(); //preventing from form submitting

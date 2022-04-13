@@ -73,29 +73,44 @@
           <form action="#">
             <div class="field name">
               <div class="input-area">
-                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Name" id="nameInputField">
                 <i class="icon fas fa-user"></i>
                 <i class="error error-icon fas fa-exclamation-circle"></i>
               </div>
               <div class="error error-txt">Name can't be blank</div>
+              <script> 
+                var nInput=document.getElementById("nameInputField");
+                nInput.onkeyup = ()=>{checkName();} // set the event listener
+                //console.log(emailInputField.nodeValue);
+                </script>
             </div>
             
             <div class="field email">
               <div class="input-area">
-                <input type="text" placeholder="Email Address">
+                <input type="text" placeholder="Email Address" id="emailInputField">
                 <i class="icon fas fa-envelope"></i>
                 <i class="error error-icon fas fa-exclamation-circle"></i>
               </div>
               <div class="error error-txt">Email can't be blank</div>
+              <script> 
+                var eInput=document.getElementById("emailInputField");
+                eInput.onkeyup = ()=>{checkEmail();} // set the event listener
+                //console.log(emailInputField.nodeValue);
+                </script>
             </div>
 
-            <div class="field name">
+            <div class="field mobile">
               <div class="input-area">
-                <input type="text" placeholder="Mobile Number">
+                <input type="text" placeholder="Mobile Number" id="mobileInputField">
                 <i class="icon fas fa-mobile"></i>
                 <i class="error error-icon fas fa-exclamation-circle"></i>
               </div>
               <div class="error error-txt">Mobile number can't be blank</div>
+              <script> 
+                var mInput=document.getElementById("mobileInputField");
+                mInput.onkeyup = ()=>{checkMobile();} // set the event listener
+                //console.log(emailInputField.nodeValue);
+                </script>
             </div>
 
 
