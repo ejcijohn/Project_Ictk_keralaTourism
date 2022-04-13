@@ -13,7 +13,14 @@ var checkboxInputvalue;
 var password1=pInput.value;
 var password2=pInput1.value;
 var checkname; var checkmail; var checkmobile; var checkpass; var checkpassmatch ; var checkboxInputvalue ;
-
+//First the parameters of this project have been determined.
+let strengthBar = document.getElementById("strength-bar");
+let parameters = {
+  count : false,
+  letters : false,
+  numbers : false,
+  special : false
+}
 function checkName(){ //checkName function
 
   nInputvalue = nField.querySelector("input").value;
@@ -81,7 +88,35 @@ function checkMobile(){ //checkEmail function
   }
 }
 
-function checkPassword(){ //checkEmail function
+
+
+//  function checkPassword(){ //checkEmail function
+ 
+//   let pattern = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;   //pattern for validate mobile
+//    //pInputvalue = pField.querySelector("input").value;
+//   if(!pInput.value.match(pattern)){ //if pattern not matched then add error and remove valid class
+//     pField.classList.add("error");
+//     pField.classList.remove("valid");
+//     document.getElementById("loginbutton").disabled = true;
+//    document.getElementById('loginbutton').style.backgroundColor="#EBEBE4";
+//     checkpass=0;
+//     let errorTxt = pField.querySelector(".error-txt");
+//     //if email value is not empty then show please enter valid email else show Email can't be blank
+//     (pInput.value != "") ? errorTxt.innerText = " Password contains atleast 8 characters [must include a Special character,Uppercase,lower case & digit]" : errorTxt.innerText = "Password can't be blank";
+//      }else{ //if pattern matched then remove error and add valid class
+//     pField.classList.remove("error");
+//     pField.classList.add("valid");
+//     password1=pInput.value;
+//     checkpass=1; 
+//     if ( checkname==1 && checkmail == 1 && checkmobile == 1 && checkpass == 1 && checkpassmatch ==1 && checkboxInputvalue ==1   ){
+//      document.getElementById("loginbutton").disabled = false;
+//      document.getElementById('loginbutton').style.backgroundColor="#0000CD";
+//   }
+//   }
+//  }
+
+function strengthChecker(){
+
   let pattern = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;   //pattern for validate mobile
   //pInputvalue = pField.querySelector("input").value;
  if(!pInput.value.match(pattern)){ //if pattern not matched then add error and remove valid class
@@ -103,7 +138,63 @@ function checkPassword(){ //checkEmail function
     document.getElementById('loginbutton').style.backgroundColor="#0000CD";
  }
  }
-}
+
+  //The value of the input box has been collected and stored in a constant called 'password'. 
+  
+  
+  let password = document.getElementById("passwordInputField").value;
+  
+  //Now the values ​​of the parameters have been added.
+    parameters.letters = (/[A-Za-z]+/.test(password))?true:false;
+    parameters.numbers = (/[0-9]+/.test(password))?true:false;
+    parameters.special = (/[!\"$%&/()=?@~`\\.\';:+=^*_-]+/.test(password))?true:false;
+    parameters.count = (password.length > 7)?true:false;
+  
+    let barLength = Object.values(parameters).filter(value=>value);
+  
+    console.log(Object.values(parameters), barLength);
+  
+    strengthBar.innerHTML = "";
+    for( let i in barLength){
+        let span = document.createElement("span");
+        span.classList.add("strength");
+        strengthBar.appendChild(span);
+    }
+  //Here 4 types of parameters have been used so 4 types of cases can be seen. A different background color is used for each step.
+    let spanRef = document.getElementsByClassName("strength");
+    for( let i = 0; i < spanRef.length; i++){
+        switch(spanRef.length - 1){
+            case 0 :
+                spanRef[i].style.background = "#ff3e36";
+                break;
+            case 1:
+                spanRef[i].style.background = "#ff691f";
+                break;
+            case 2:
+                spanRef[i].style.background = "#ffda36";
+                break;
+            case 3:
+                spanRef[i].style.background = "#0be881";
+                break;
+        }
+    }
+  }
+
+  function toggle(){
+    //First the constant of some id is determined.
+      let password = document.getElementById("passwordInputField");
+      let eye = document.getElementById("toggle");
+    //When the icon is clicked, the passwords will be converted to text. This will change the color of the icon.
+      if(password.getAttribute("type") == "password"){
+          password.setAttribute("type","text");
+          eye.style.color = "#062b61";
+      }
+      else{
+          password.setAttribute("type","password");
+          eye.style.color = "#6b6868";
+      }
+    }
+    
 function checkPasswordmatch(){ //checkEmail function
   //let pattern = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;   //pattern for validate mobile
   password2 = pInput1.value;

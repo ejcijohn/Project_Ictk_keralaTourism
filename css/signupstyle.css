@@ -143,3 +143,28 @@ form input[type="submit"]{
 form input[type="submit"]:hover{
   background: #2c52ed;
 }
+#toggle{
+  position: absolute;
+  top: 25px;
+  right: 65 px;
+  color: #808080;
+  cursor: pointer;
+}
+#toggle i{
+  font-size: 20px;
+}
+.strength{
+  width: 25%;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  bottom: 5px;
+}
+
+#strength-bar{
+  background-color: #dcdcdc;
+  height: 10px;
+  position: relative;
+  margin-top: 15px;
+  border-radius: 10px;
+}

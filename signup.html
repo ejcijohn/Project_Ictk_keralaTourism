@@ -115,16 +115,25 @@
 
 
             <div class="field password">
-              <div class="input-area">
-                <input type="password" placeholder="Password" id="passwordInputField">
+              <div class="input-area" >
+                
+                <input type="password" placeholder="Password" id="passwordInputField" >
                 <i class="icon fas fa-lock"></i>
+                <span id="toggle" onclick="toggle()"></span>
+                <i class="fas fa-eye"></i>
+                 </span> 
                 <i class="error error-icon fas fa-exclamation-circle"></i>
               </div>
+              <div id="strength-bar"></div>
               <div class="error error-txt">Password can't be blank</div>
+              
               <script> 
-                var pInput=document.getElementById("passwordInputField");
-                pInput.onkeyup = ()=>{checkPassword();} // set the event listener
-                //console.log(emailInputField.nodeValue);
+                 
+                 
+                 var pInput=document.getElementById("passwordInputField");
+                // pInput.onkeyup = ()=>{checkPassword();} // set the event listener
+                 pInput.onkeyup = ()=>{strengthChecker();}
+                 // //console.log(emailInputField.nodeValue);
                 </script>
             </div>
 
@@ -174,109 +183,6 @@
 <br></br>
 <br></br>
 <br></br>
-
- <!-- <p>
-    <br>
-    <br>
-    <div class="container" >
-      <h4 id="scrollspyHeading3">Sign Up</h4>
-         <div class="row">
-            
-            <div class="clearfix">
-               
-    <form class="row g-3">
-        <div class="row g-3">
-            <div class="col">
-            <label for="inputfirstname" class="form-label">First name</label>
-            <input type="text" class="form-control" placeholder="First name" aria-label="First name">
-             </div>
-          <div class="col">
-             <label for="inputlastname" class="form-label">Last name</label>
-             <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-          </div>
-         </div>
-         <div class="row g-3">
-            <div class="col">
-            <label for="inputmail" class="form-label">Email</label>
-            <input type="text" class="form-control" placeholder="email@123.com" aria-label="Email">
-             </div>
-          <div class="col">
-             <label for="inputpassword" class="form-label">password</label>
-             <input type="password" class="form-control" placeholder="password" id="inputPassword">
-          </div>
-         </div>
-      <div class="col-12">
-        <label for="inputAddress" class="form-label">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-      </div>
-      <div class="col-12">
-        <label for="inputAddress2" class="form-label">Address 2</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-      </div>
-      <div class="col-md-6">
-        <label for="inputCity" class="form-label">City</label>
-        <input type="text" class="form-control" id="inputCity">
-      </div>
-      <div class="col-md-4">
-        <label for="inputState" class="form-label">State</label>
-        <select id="inputState" class="form-select">
-          <option selected>Choose...</option>
-          <option>Andaman and Nicobar (UT)</option>
-          <option>Andhra Pradesh</option>
-          <option>Arunachal Pradesh</option>
-          <option> Assam</option>
-          <option>Bihar</option>
-          <option>Chandigarh (UT)</option>
-          <option>Chhattisgarh</option>
-          <option> Dadra and Nagar Haveli (UT)</option>
-          <option>Daman and Diu (UT)</option>
-          <option>Delhi</option>
-          <option>Goa</option>
-          <option>Gujarat</option>
-          <option> Haryana</option>
-          <option>Himachal Pradesh</option>
-          <option>Jammu and Kashmir</option>
-          <option>Jharkhand</option>
-          <option>Karnataka</option>
-          <option>Kerala</option>
-          <option>Lakshadweep (UT)</option>
-          <option> Madhya Pradesh</option>
-          <option>Maharashtra</option>
-          <option>Manipur</option>
-          <option>Meghalaya</option>
-          <option>Mizoram</option>
-          <option>Nagaland</option>
-          <option>Orissa</option>
-          <option>Puducherry (UT)</option>
-          <option>Punjab</option>
-          <option> Rajasthan</option>
-          <option>Sikkim</option>
-          <option>Tamil Nadu</option>
-          <option>Telangana</option>
-          <option>Tripura</option>
-          <option>Uttar Pradesh</option>
-          <option> Uttarakhand</option>
-          <option>West Bengal</option>
-        </select>
-      </div>
-      <div class="col-md-2">
-        <label for="inputZip" class="form-label">Zip</label>
-        <input type="text" class="form-control" id="inputZip">
-      </div>
-      </div>
-     
-      <div class="col-12">
-        <br>
-        <button type="submit" class="btn btn-primary">Sign Up</button>
-      </div>
-    </form>
-  </div>
-</div>
-</div>
-  </p>
- <br></br>
- <br></br> -->
- 
    <nav class="navbar fixed-bottom navbar-light bg-light">
     <div class="container-fluid">
       <div class="container">
